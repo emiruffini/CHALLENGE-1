@@ -25,9 +25,21 @@ if (btn != null) {
     btn.addEventListener('click', e => {
         const tipo = checkform() ? 'success' : 'warning'
         const mensaje = checkform() ? 'Gracias por contactarnos, ! En breve nos comunicaremos !' : 'Porfavor, ¡ Complete todos los campos !'
-        swal(mensaje, {
+        const cancel = checkform() ? false : true
+        Swal.fire({
+            title: mensaje,
             icon: tipo,
-        });
+            heightAuto: false,
+            allowOutsideClick: false,
+            reverseButtons: true,
+            padding: '3em',
+            showCancelButton: cancel,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Volver a contacto',
+            confirmButtonText: '<a href="index.html">Ir al Inicio</a>'
+
+        })
 
     })
 }
@@ -85,26 +97,32 @@ function buyBtn() {
     var buy = document.querySelector('#btn2')
     if (buy != null) {
         buy.addEventListener('click', e => {
-
-
-            swal({
-                    title: "¿ Desea comprar este producto ?",
-                    text: "Una vez confirmada la compra, se le reservará el mismo",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("¡Muchas Gracias por comprar este producto!", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("¡El producto no ha sido reservado!", {
-                            icon: "error",
-                        });
-                    }
-                });
+            Swal.fire({
+                title: '¿Usted quiere comprar este producto?',
+                text: "Una vez confirmado, el mismo será reservado",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Si, ¡Lo Quiero!',
+                cancelButtonText: 'No lo quiero :(',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                        '¡ Comprado !',
+                        'El producto ha sido reservado para retirar en nuestra tienda',
+                        'success'
+                    )
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    Swal.fire(
+                        'Compra cancelada',
+                        'Lo esperamos la próxima vez :)',
+                        'error'
+                    )
+                }
+            })
 
         })
     }

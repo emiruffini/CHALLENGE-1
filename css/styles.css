@@ -9,6 +9,37 @@
 
 /*GLOBALES*/
 
+button.swal2-confirm {
+    background-color: var(--colorPrincipal)!important;
+}
+
+.swal2-cancel {
+    font-size: 1.5rem!important;
+}
+
+.swal2-content {
+    font-size: 2rem;
+}
+
+.swal2-confirm {
+    font-size: 2rem!important;
+}
+
+.swal2-confirm a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+.swal2-title {
+    font-size: 3rem!important;
+}
+
+.swal2-popup {
+    width: 80vh;
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -711,4 +742,8 @@ textarea {
 
 .animatedColor {
     color: var(--colorPrincipal)!important;
+}
+
+.btnS {
+    display: inline-block;
 }
