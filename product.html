@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -26,6 +27,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+
 </head>
 
 <body>
@@ -38,38 +41,42 @@
         </nav>
     </header>
 
-    <main class="productsContainer container">
-        <div id="app" class="pharmacy">
-            <h2>Farmacia</h2>
+    <main class="container">
+        <div class="productSelected">
+            <div id="app" class="backgroundProduct">
 
-            <div class="products">
-                <div v-for="value in pharmacy">
-                    <div :title="value.descripcion" class="product">
-                        <h3 class="title ">{{value.nombre}}</h3>
-                        <img class="imgRed" v-if="value.stock <= 5" :src="value.imagen" alt="producto ">
-                        <img class="imgNo" v-else-if="value.stock == 0" :src="value.imagen" alt="producto ">
-                        <img class="imgGre" v-else :src="value.imagen" alt="producto ">
-                        <h4 class="stock" v-if="value.stock <= 5">Ultimas Unidades</h4>
-                        <h4 class="stock2" v-else-if="value.stock == 0">Sin Stock</h4>
-                        <h4 class="stock1" v-else>Unidades Disponibles</h4>
-                        <h3 class="price ">$ {{value.precio}} ARS</h3>
-                        <a :href="'product.html?prod=' + value._id" class="button">Comprar</a>
+                <div class="" v-for="value in product">
+
+                    <div class="productFlex">
+                        <img class="imgProduct" :src="value.imagen" alt="producto ">
+                        <div class="contentProduct">
+                            <h3 class="titleProd">{{value.nombre}}</h3>
+                            <h3 class="desc">{{value.descripcion}}</h3>
+                            <h3 class="price ">$ {{value.precio}} ARS</h3>
+                            <h3 class="stockRed" v-if=" value.stock <=5">Stock : {{value.stock}} unidades.</h3>
+                            <h3 class="stockGre" v-else>Stock : {{value.stock}} unidades.</h3>
+                        </div>
+
                     </div>
                 </div>
+                <a id="btn2" href="#" class="btn2">Comprar</a>
             </div>
-        </div>
+
     </main>
-    <footer class="siteHeader ">
+
+    <footer class="siteHeader">
         <nav>
-            <a href="index.html ">Inicio</a>
-            <a href="contact.html ">Contacto</a>
-            <a href="pharmacy.html ">Farmacia</a>
-            <a href="toys.html ">Juguetes</a>
+            <a href="index.html">Inicio</a>
+            <a href="contact.html">Contacto</a>
+            <a href="pharmacy.html">Farmacia</a>
+            <a href="toys.html">Juguetes</a>
         </nav>
 
         <p>Todos los derechos reservados - 2020 - By Emiliano Ruffini</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/script.js "></script>
 
 </body>

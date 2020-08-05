@@ -2,10 +2,10 @@
 
 var btn = document.querySelector('#btn1')
 
-/* function checkform() {
-    var f = document.forms["form"].elements;
+function checkform() {
+    var f = document.forms["form"].elements
     console.log(f)
-    var cansubmit = true;
+    var cansubmit = true
 
     for (var i = 0; i < f.length; i++) {
         if (f[i].tagName == "INPUT") {
@@ -15,29 +15,23 @@ var btn = document.querySelector('#btn1')
         }
     }
 
-    document.getElementById('btn1').disabled = !cansubmit;
-} */
+    const varx = cansubmit ? true : false
+
+    return varx
+}
+
 
 if (btn != null) {
     btn.addEventListener('click', e => {
-        swal({
-                title: "Usted presiono el boton enviar",
-                text: "!Verifique que todos los campos esten completos!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("! Formulario enviado !", {
-                        icon: "success",
-                    });
-                }
-            });
+        const tipo = checkform() ? 'success' : 'warning'
+        const mensaje = checkform() ? 'Gracias por contactarnos, ! En breve nos comunicaremos !' : 'Porfavor, ¡ Complete todos los campos !'
+        swal(mensaje, {
+            icon: tipo,
+        });
+
     })
 }
 
-/* checkform() */
 
 
 /*PHARMACY*/
@@ -49,6 +43,7 @@ fetch(`https://apipetshop.herokuapp.com/api/articulos`)
         data = dataJSON.response
         selectData(data)
         console.log(data)
+        selectProduct(data)
     })
 
 
@@ -60,12 +55,71 @@ function selectData(array) {
 
 
 
-
-
 var app = new Vue({
     el: "#app",
     data: {
         pharmacy: [],
-        toys: []
+        toys: [],
+        product: []
     }
 })
+
+
+
+function selectProduct(data) {
+    const product = getParameterByName('prod')
+    if (product != null) {
+        for (var i = 0; i < data.length; i++) {
+            if (data[i]._id == product) {
+                app.product.splice(0, 1, data[i])
+            }
+        }
+    }
+
+}
+
+buyBtn()
+
+
+function buyBtn() {
+    var buy = document.querySelector('#btn2')
+    console.log(buy)
+    buy.addEventListener('click', e => {
+        if (buy != null) {
+
+            swal({
+                    title: "¿ Desea comprar este producto ?",
+                    text: "Una vez confirmada la compra, se le reservará el mismo",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("¡Muchas Gracias por comprar este producto!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("¡El producto no ha sido reservado!", {
+                            icon: "error",
+                        });
+                    }
+                });
+
+
+        }
+    })
+
+
+
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}

@@ -47,9 +47,14 @@
                 <div v-for="value in toys">
                     <div :title="value.descripcion" class="product">
                         <h3 class="title ">{{value.nombre}}</h3>
-                        <img :src="value.imagen" alt="producto ">
-                        <h3 class="precio ">$ {{value.precio}} ARS</h3>
-                        <a href="producto.html " class="button ">Comprar</a>
+                        <img class="imgRed" v-if="value.stock <= 5" :src="value.imagen" alt="producto ">
+                        <img class="imgNo" v-else-if="value.stock == 0" :src="value.imagen" alt="producto ">
+                        <img class="imgGre" v-else :src="value.imagen" alt="producto ">
+                        <h4 class="stock" v-if="value.stock <= 5">Ultimas Unidades</h4>
+                        <h4 class="stock2" v-else-if="value.stock <= 5">Ultimas Unidades</h4>
+                        <h4 class="stock1" v-else>Unidades Disponibles</h4>
+                        <h3 class="price ">$ {{value.precio}} ARS</h3>
+                        <a :href="'product.html?prod=' + value._id" class="button ">Comprar</a>
                     </div>
                 </div>
             </div>
