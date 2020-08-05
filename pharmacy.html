@@ -7,6 +7,7 @@
     <title>Pet Shop Franco</title>
     <script src="https://kit.fontawesome.com/681345000d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -42,7 +43,7 @@
         <div id="app" class="pharmacy">
             <h2>Farmacia</h2>
 
-            <div class="products">
+            <div class="products animate__animated animate__fadeInUp">
                 <div v-for="value in pharmacy">
                     <div :title="value.descripcion" class="product">
                         <h3 class="title ">{{value.nombre}}</h3>

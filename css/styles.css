@@ -438,6 +438,7 @@ textarea {
 .contactType {
     display: flex;
     align-items: baseline;
+    flex-direction: column;
 }
 
 .contactType p {
@@ -448,7 +449,17 @@ textarea {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding: 1rem 0.5rem 0.5rem 0.5rem
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .contactType {
+        flex-direction: row;
+    }
+    .radioBtn {
+        flex-direction: row;
+    }
 }
 
 .radioBtn label {
@@ -632,11 +643,12 @@ textarea {
     }
     .imgProduct {
         min-width: 40vh;
+        width: 50vh;
     }
 }
 
 .imgProduct {
-    width: 50vh;
+    width: 30vh;
     margin: 5rem;
     border: solid;
     border-radius: 2rem;
@@ -695,4 +707,8 @@ textarea {
     color: var(--colorSecundario);
     background-color: var(--colorFondoHover);
     transition: background-color .6s ease-in-out;
+}
+
+.animatedColor {
+    color: var(--colorPrincipal)!important;
 }

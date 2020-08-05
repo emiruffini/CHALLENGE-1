@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/681345000d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -43,13 +44,13 @@
 
     <div class="hero">
         <div class="containerHero container content">
-            <img src="assets/Logo.png" alt="Logo Principal">
-            <h1>Bienvenidos</h1>
+            <img class="animate__animated animate__fadeInLeft" src="assets/Logo.png" alt="Logo Principal">
+            <h1 class="animate__animated animate__fadeInRight">Bienvenidos</h1>
         </div>
     </div>
 
     <main>
-        <div class="siteHeader">
+        <div class="siteHeader bar">
             <nav>
                 <a href="contact.html">Contacto</a>
                 <a href="us.html">Nosotros</a>
@@ -66,21 +67,21 @@
 
                 <div class="contentProducts">
                     <h3>Alimentos</h3>
-                    <div class="icon">
+                    <div class=" animation1 icon">
                         <i class="fas fa-bone"></i>
                     </div>
                 </div>
 
                 <div class="contentProducts">
                     <h3>Accesorios</h3>
-                    <div class="icon">
+                    <div class=" animation2 icon">
                         <i class="fas fa-dog"></i>
                     </div>
 
                 </div>
                 <div class="contentProducts">
                     <h3>Medicamentos</h3>
-                    <div class="icon">
+                    <div class="animation3 icon">
                         <i class="fas fa-capsules"></i>
                     </div>
                 </div>
@@ -96,20 +97,20 @@
                 <h2>Servicios Pet Shop Franco</h2>
 
                 <div class="contentService">
-                    <div class="service">
-                        <h3>Consultorio Medico</h3>
+                    <div class="service cont1 ">
+                        <h3 class="animation4">Consultorio Medico</h3>
                         <p>Contamos con instalaciones de primer nivel. Atención Médica Veterinaria con profesionales en constante capacitación. </p>
                     </div>
-                    <div class="service">
-                        <h3>Medico Veterinario a Domicilio</h3>
+                    <div class="service cont2">
+                        <h3 class="animation5">Medico Veterinario a Domicilio</h3>
                         <p>Contamos con un servicio de asistencia domiciliaria de nuestro Médico Veterinario en caso de imposibilidad de trasladar a tu mascota.</p>
                     </div>
-                    <div class="service">
-                        <h3>Guardería de Mascotas</h3>
+                    <div class="service cont3">
+                        <h3 class="animation6">Guardería de Mascotas</h3>
                         <p>Deja en nuestras manos a tu mejor amigo. Tenemos Guardería por hora o por estadía.</p>
                     </div>
-                    <div class="service">
-                        <h3>Baño y Peluquería</h3>
+                    <div class="service cont4">
+                        <h3 class="animation7">Baño y Peluquería</h3>
                         <p>Contamos con profesionales capacitados para que tu mascota tenga la mejor experiencia durante su aseo.</p>
                     </div>
                 </div>
@@ -129,7 +130,8 @@
         <p>Todos los derechos reservados - 2020 - By Emiliano Ruffini</p>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="js/animations.js"></script>
 
 </body>
 

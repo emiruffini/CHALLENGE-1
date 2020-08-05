@@ -42,7 +42,7 @@ fetch(`https://apipetshop.herokuapp.com/api/articulos`)
     .then(dataJSON => {
         data = dataJSON.response
         selectData(data)
-        console.log(data)
+
         selectProduct(data)
     })
 
@@ -83,9 +83,9 @@ buyBtn()
 
 function buyBtn() {
     var buy = document.querySelector('#btn2')
-    console.log(buy)
-    buy.addEventListener('click', e => {
-        if (buy != null) {
+    if (buy != null) {
+        buy.addEventListener('click', e => {
+
 
             swal({
                     title: "¿ Desea comprar este producto ?",
@@ -106,10 +106,8 @@ function buyBtn() {
                     }
                 });
 
-
-        }
-    })
-
+        })
+    }
 
 
 }
