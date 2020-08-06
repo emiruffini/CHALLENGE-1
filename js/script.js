@@ -1,7 +1,8 @@
 /* SCRIPT FORM*/
 
-var btn = document.querySelector('#btn1')
+var btn = document.querySelector('#btn1') //Boton enviar formulario
 
+//Con esta funcion comprobamos que los campos del formulario este completo.
 function checkform() {
     var f = document.forms["form"].elements
     console.log(f)
@@ -20,7 +21,7 @@ function checkform() {
     return varx
 }
 
-
+//Alerta al hacer click en el boton enviar del form
 if (btn != null) {
     btn.addEventListener('click', e => {
         const tipo = checkform() ? 'success' : 'warning'
@@ -48,7 +49,7 @@ if (btn != null) {
 
 /*PHARMACY*/
 
-
+// Pedido a la api para obtener los articulos
 fetch(`https://apipetshop.herokuapp.com/api/articulos`)
     .then(response => response.json())
     .then(dataJSON => {
@@ -58,7 +59,7 @@ fetch(`https://apipetshop.herokuapp.com/api/articulos`)
         selectProduct(data)
     })
 
-
+//Función para determinar el tipo del producto y mostrarlo en su correspondiente pagina
 function selectData(array) {
     for (var i = 0; i < array.length; i++) {
         array[i].tipo === "Medicamento" ? app.pharmacy.push(array[i]) : app.toys.push(array[i])
@@ -66,7 +67,7 @@ function selectData(array) {
 }
 
 
-
+//Uso de vue para renderizado
 var app = new Vue({
     el: "#app",
     data: {
@@ -77,7 +78,7 @@ var app = new Vue({
 })
 
 
-
+//Con esta función podemos renderizar el producto seleccionado para comprar en una pagina aparte
 function selectProduct(data) {
     const product = getParameterByName('prod')
     if (product != null) {
@@ -92,9 +93,9 @@ function selectProduct(data) {
 
 buyBtn()
 
-
+//Esta funcion nos brinda una alerta al pulsar comprar en algun producto
 function buyBtn() {
-    var buy = document.querySelector('#btn2')
+    var buy = document.querySelector('#btn2') //Boton comprar
     if (buy != null) {
         buy.addEventListener('click', e => {
             Swal.fire({
@@ -130,6 +131,7 @@ function buyBtn() {
 
 }
 
+// Esta funcion nos brida el id del producto a mostrar pasado por la URL
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
