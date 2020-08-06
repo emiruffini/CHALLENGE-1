@@ -1,5 +1,5 @@
 # README.MD
-Pet Shop Franco. 
+#Pet Shop Franco# 
 En este proyecto se realiza un front-end para una veterinaria, incluyendo diferentes peticiones por parte del cliente. Dicho trabajo consume una API que contiene diferentes productos comercializados por la misma.
 
 ## Content
@@ -13,7 +13,7 @@ Este proyecto contiene varias secciones, las cuales son:
 * Juguetes ------> Esta sección contiene los juguetes para mascotas también brindados por una API.
 
 ## Demo
-Para ver una demo del proyecto desplegado, puedes  [Demo of the proyect](https://anabelisa.co/tips-para-hacer-un-buen-readme-md/)
+Para ver una demo del proyecto desplegado, puedes  [Demo of the proyect](https://compassionate-shockley-f94102.netlify.app/)
 
 ## How to clone
 No se necesitan requerimientos especiales para clonar el proyecto
@@ -21,7 +21,7 @@ No se necesitan requerimientos especiales para clonar el proyecto
 ## Preview
 Previsualizacion del sitio web en su pagina de inicio.
 
-![](assets/Preview Pet_Shop.png)
+![](/assets/Preview Pet_Shop.png)
 
 ### Notes
 Todos aquellos productos que tengan un stock menor a 5 aparecerán marcados con rojos, ademas no será posible enviar el formulario sin que los campos se encuentren completos. Las alertas son meramente ilustrativas y no conllevan un desarrollo back-end asociado a ellas.
