@@ -13,7 +13,7 @@ Este proyecto contiene varias secciones, las cuales son:
 * Juguetes ------> Esta sección contiene los juguetes para mascotas también brindados por una API.
 
 ## Demo
-Para ver una demo del proyecto desplegado, puedes ir a [Demo del proyecto](https://compassionate-shockley-f94102.netlify.app/)
+Para ver una demo del proyecto desplegado, puedes ir a [Demo del proyecto](https://suspicious-colden-028fa5.netlify.app/)
 
 ## How to clone
 No se necesitan requerimientos especiales para clonar el proyecto
